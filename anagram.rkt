@@ -1,6 +1,8 @@
 #!/usr/bin/racket
 #lang racket
 
+(provide (all-defined-out))
+
 #|
 Takes two strings and determines whether or not they are anagrams of eachother
 

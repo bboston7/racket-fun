@@ -1,5 +1,5 @@
 #!/usr/bin/racket
-#lang racket/base
+#lang racket
 
 (require rackunit
          "anagram.rkt")
