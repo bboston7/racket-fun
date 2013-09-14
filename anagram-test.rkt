@@ -6,7 +6,6 @@
          "anagram.rkt")
 
 (define-test-suite anagram-tests
-  (fail)
   (check-true (anagram? "abc" "abc") "Equal strings")
   (check-true (anagram? "" "") "Empty strings")
   (check-true (anagram? "acb" "abc") "anagram strings")
