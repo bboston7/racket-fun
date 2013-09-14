@@ -1,6 +1,8 @@
 #!/usr/bin/racket
 #lang racket
 
+(provide (all-defined-out))
+
 #|
 A slow implementation of map
 
@@ -11,7 +13,7 @@ A slow implementation of map
 (define (my-map fn lst)
   (if (null? lst)
     null
-    (cons (fn (car lst)) (my-map (cdr lst)))))
+    (cons (fn (car lst)) (my-map fn (cdr lst)))))
 
 #|
 Tail recursive map
