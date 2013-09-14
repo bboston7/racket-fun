@@ -4,9 +4,11 @@
 (require rackunit
          "anagram.rkt")
 
-(check-true (anagram? ("abc" "abc")) "Equal strings")
-(check-trye (anagram? ("" "")) "Empty strings")
-(check-true (anagram? ("acb" "abc")) "anagram strings")
-(check-true (anagram? ("abc" "cba")) "reversed strings")
-(check-true (anagram? ("a" "a")) "Single character")
-(check-false (anagram? ("abc" "acc")) "Not anagrams")
+(check-true (anagram? "abc" "abc") "Equal strings")
+(check-true (anagram? "" "") "Empty strings")
+(check-true (anagram? "acb" "abc") "anagram strings")
+(check-true (anagram? "abc" "cba") "reversed strings")
+(check-true (anagram? "a" "a") "Single character")
+(check-false (anagram? "abc" "acc") "Not anagrams")
+(check-false (anagram? "totally" "different") "totally different")
+(fail "blah bleh")

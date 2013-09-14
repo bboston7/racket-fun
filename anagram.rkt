@@ -12,5 +12,5 @@ Takes two strings and determines whether or not they are anagrams of eachother
 |#
 (define (anagram? s1 s2)
   (define (fix-string str)
-    (sort (remove* (list #\space) (string->list s1)) char>?))
+    (sort (remove* (list #\space) (string->list str)) char>?))
   (equal? (fix-string s1) (fix-string s2)))
