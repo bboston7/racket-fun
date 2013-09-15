@@ -30,3 +30,9 @@ Tail recursive map
       (mepper (cons (fn (car lst)) acc) (cdr lst))))
   (define mapped (mepper null lst))
   (if preserve-order (reverse mapped) mapped))
+
+(define (my-filter fn lst)
+  (cond
+    [(null? lst) null]
+    [(fn (car lst) (cons (car lst) (my-filter fn (cdr lst))))]
+    [else (my-filter fn (cdr lst))]))
