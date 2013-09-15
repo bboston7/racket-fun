@@ -8,7 +8,8 @@
 (define suites (list
                  anagram-tests
                  my-map-tests
-                 my-map-tail-tests))
+                 my-map-tail-tests
+                 my-filter-tests))
 
 (define (all-pass? suite)
   (= 0 (run-tests suite)))
