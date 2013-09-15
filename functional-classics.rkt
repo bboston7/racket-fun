@@ -31,8 +31,31 @@ Tail recursive map
   (define mapped (mepper null lst))
   (if preserve-order (reverse mapped) mapped))
 
+#|
+Simple implementation of filter
+
+(my-filter fn lst) -> list?
+  fn  : procedure? to apply to each element of lst
+  lst : list? to filter based on fn
+|#
 (define (my-filter fn lst)
   (cond
     [(null? lst) null]
-    [(fn (car lst) (cons (car lst) (my-filter fn (cdr lst))))]
+    [(fn (car lst)) (cons (car lst) (my-filter fn (cdr lst)))]
     [else (my-filter fn (cdr lst))]))
+
+#|
+Tail recursive implementation of filter
+
+(my-filter-tail fn lst [preserve-order #f]) -> list?
+  fn             : procedure? to apply to each element of lst
+  lst            : list? to filter based on fn
+  preserve-order : boolean? whether or not to preserve the order of the list
+|#
+(define (my-filter-tail fn lst [preserve-order #f])
+  (define (felter acc lst)
+    (cond [(null? lst) acc]
+          [(fn (car lst)) (felter (cons (car lst) acc) (cdr lst))]
+          [else (felter acc (cdr lst))]))
+  (define filtered (felter null lst))
+  (if preserve-order (reverse filtered) (filtered)))

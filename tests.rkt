@@ -9,7 +9,8 @@
                  anagram-tests
                  my-map-tests
                  my-map-tail-tests
-                 my-filter-tests))
+                 my-filter-tests
+                 my-filter-tail-tests))
 
 (define (all-pass? suite)
   (= 0 (run-tests suite)))

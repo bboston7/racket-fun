@@ -23,3 +23,8 @@
   (check-equal? (impl even? (list 3)) null "Single element no match"))
 
 (define/provide-test-suite my-filter-tests (filter-tests my-filter))
+(define/provide-test-suite my-filter-tail-tests (filter-tests
+                                                  (lambda (fn lst)
+                                                    (my-filter-tail fn
+                                                                    lst
+                                                                    #t))))
