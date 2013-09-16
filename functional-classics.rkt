@@ -72,3 +72,13 @@ Remove consecutive duplicates in a list
     [(null? (cdr lst)) lst]
     [(equal? (car lst) (cadr lst)) (remove-dupes (cdr lst))]
     [else (cons (car lst) (remove-dupes (cdr lst)))]))
+
+#|
+Fold the input list from right to left
+
+(my-foldr fn val lst) -> any/c
+  fn  : procedure? to apply to each element of lst
+  val : any/c starting value
+  lst : List to fold over
+|#
+(define (my-foldr fn val lst) (raise "my-foldr not yet implemented"))
