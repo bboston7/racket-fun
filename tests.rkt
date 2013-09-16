@@ -11,7 +11,8 @@
                  my-map-tail-tests
                  my-filter-tests
                  my-filter-tail-tests
-                 my-foldr-tests))
+                 my-foldr-tests
+                 my-foldl-tests))
 
 (define (all-pass? suite)
   (= 0 (run-tests suite)))

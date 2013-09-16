@@ -85,3 +85,16 @@ Fold the input list from right to left
   (if (null? lst)
     val
     (fn (car lst) (my-foldr fn val (cdr lst)))))
+
+#|
+Fold the input list from left to right
+
+(my-foldr fn val lst) -> any/c
+  fn  : procedure? to apply to each element of lst
+  val : any/c starting value
+  lst : List to fold over
+|#
+(define (my-foldl fn val lst)
+  (if (null? lst)
+    val
+    (my-foldl fn (fn (car lst) val) (cdr lst))))
