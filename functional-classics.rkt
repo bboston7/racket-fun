@@ -60,6 +60,12 @@ Tail recursive implementation of filter
   (define filtered (felter null lst))
   (if preserve-order (reverse filtered) (filtered)))
 
+#|
+Remove consecutive duplicates in a list
+
+(remove-dupes lst) -> list?
+  lst : list? to remove duplicates from
+|#
 (define (remove-dupes lst)
   (cond
     [(null? lst) lst]
