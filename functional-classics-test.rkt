@@ -28,3 +28,14 @@
                                                     (my-filter-tail fn
                                                                     lst
                                                                     #t))))
+
+(define/provide-test-suite
+  remove-dupes-tests
+  (check-equal? (remove-dupes (list 1 1 2 2 3 3 4 4)) (list 1 2 3 4) "Basic")
+  (check-equal? (remove-dupes null) null "Empty list")
+  (check-equal? (remove-dupes (list 1 1 1 1 1 1)) (list 1) "All equal")
+  (check-equal? (remove-dupes (list 1 1 2 3 4)) (list 1 2 3 4)
+                "First two equal")
+  (check-equal? (remove-dupes (list 1 2 3 4 4)) (list 1 2 3 4)
+                "Last two equal")
+  (check-equal? (remove-dupes (list 1 2 3 4)) (list 1 2 3 4) "No dupes"))

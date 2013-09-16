@@ -59,3 +59,10 @@ Tail recursive implementation of filter
           [else (felter acc (cdr lst))]))
   (define filtered (felter null lst))
   (if preserve-order (reverse filtered) (filtered)))
+
+(define (remove-dupes lst)
+  (cond
+    [(null? lst) lst]
+    [(null? (cdr lst)) lst]
+    [(equal? (car lst) (cadr lst)) (remove-dupes (cdr lst))]
+    [else (cons (car lst) (remove-dupes (cdr lst)))]))
