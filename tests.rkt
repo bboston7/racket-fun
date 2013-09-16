@@ -10,7 +10,8 @@
                  my-map-tests
                  my-map-tail-tests
                  my-filter-tests
-                 my-filter-tail-tests))
+                 my-filter-tail-tests
+                 my-foldr-tests))
 
 (define (all-pass? suite)
   (= 0 (run-tests suite)))
