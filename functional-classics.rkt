@@ -81,4 +81,7 @@ Fold the input list from right to left
   val : any/c starting value
   lst : List to fold over
 |#
-(define (my-foldr fn val lst) (raise "my-foldr not yet implemented"))
+(define (my-foldr fn val lst)
+  (if (null? lst)
+    val
+    (fn (car lst) (my-foldr fn val (cdr lst)))))

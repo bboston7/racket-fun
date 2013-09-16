@@ -44,4 +44,4 @@
   my-foldr-tests
   (check-equal? (my-foldr cons null '(1 2 3 4)) '(1 2 3 4) "Basic")
   (check-equal? (my-foldr cons null null) null "Empty list test")
-  (check-equal? (my-foldr cons '(1) '(1 2 3)) '(1 1 2 3) "Existing list test"))
+  (check-equal? (my-foldr cons '(1) '(1 2 3)) '(1 2 3 1) "Existing list test"))
