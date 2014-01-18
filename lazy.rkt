@@ -2,6 +2,7 @@
 
 (provide get-nth)
 
+; Would be an infinite loop if this were not lazy!
 (define (nat-lst x)
   (cons x (nat-lst (add1 x))))
 
